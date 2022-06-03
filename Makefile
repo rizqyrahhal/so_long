@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/02 22:03:03 by rarahhal          #+#    #+#              #
-#    Updated: 2022/06/02 22:06:24 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/06/03 23:40:04 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,16 +17,16 @@ CC = CC
 
 SRCS = Mandatory/so_long.c \
 
-BONUS_SRCS = Bonus/
+BONUS_SRCS = 
 
-LIBFT = libft/
+LIBFT = 
 
 OBJS = $(SRCS:.c=.o)
 OBJS_L = $(LIBFT:.c=.o)
 OBJS_B = $(BONUS_SRCS:.c=.o)
 
 $(NAME): $(OBJS) $(OBJS_L)
-	$(CC) $(FLAGS) $(OBJS) $(OBJS_L) -o $(NAME)
+	$(CC)  -Lmlx -lmlx -framework OpenGL -framework AppKit $(FLAGS) $(OBJS) $(OBJS_L) -o $(NAME)
 
 $(NAME_BONUS): $(OBJS_B) $(OBJS_L)
 	$(CC) $(FLAGS) $(OBJS_B) $(OBJS_L) -o $(NAME_BONUS)
