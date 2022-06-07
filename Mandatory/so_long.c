@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/07 13:48:54 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:32:50 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,49 +38,49 @@ int key_press(int keycode, t_param *param)
     return (0);
 }
 
-void    map_read(char   *filename, t_map *map)
+void    map_read(char   *filename, t_game *game)
 {
     int     fd;
     char    *line;
     
     fd = open(filename, O_RDONLY);
     line = get_next_line(fd);
-    map->height = 0;
-    map->width = ft_strlen(line);
-    map->str_line = ft_strdup(line);
+    game->height = 0;
+    game->width = ft_strlen(line);
+    game->map_len = ft_strdup(line);
     free(line);
     while(line)
     {
-        map->height++;
+        game->height++;
         line = get_next_line(fd);
         if(line)
-            map->str_line = ft_strjoin(map->str_line ,line);
+            game->map_len = ft_strjoin(game->map_len ,line);
         free(line);
     }
     close(fd);
 }
 
-void    setting_img(t_long *solong, t_imge *image, t_map *map)
+void    setting_img(t_game *game, t_imge *image)
 {
     int hei;
     int wid;
 
     hei = 0;
-    while (hei < image->img_height)
+    while (hei < game->height)
     {
         wid = 0;
-        while (wid < image->img_width)
+        while (wid < game->width)
         {
-            if (map->str_line[hei * image->img_width + wid] == '1')
-                mlx_put_image_to_window(solong->mlx, solong->win, image->img_wall, wid * 64, hei * 64);
-            else if (map->str_line[hei * image->img_width + wid] == 'C')
-                mlx_put_image_to_window(solong->mlx, solong->win, image->img_coll, wid * 64, hei * 64);
-            else if (map->str_line[hei * image->img_width + wid] == 'P')
-                mlx_put_image_to_window(solong->mlx, solong->win, image->img_player, wid * 64, hei * 64);
-            else if (map->str_line[hei * image->img_width + wid] == 'E')
-                mlx_put_image_to_window(solong->mlx, solong->win, image->img_exit, wid * 64, hei * 64);
-            else
-                mlx_put_image_to_window(solong->mlx, solong->win, image->img_space, wid * 64, hei * 64);
+            if (game->map_len[hei * game->width + wid] == '1')
+                mlx_put_image_to_window(game->mlx, game->win, image->img_wall, wid * 64, hei * 64);
+            else if (game->map_len[hei * game->width + wid] == 'C')
+                mlx_put_image_to_window(game->mlx, game->win, image->img_coll, wid * 64, hei * 64);
+            else if (game->map_len[hei * game->width + wid] == 'P')
+                mlx_put_image_to_window(game->mlx, game->win, image->img_player, wid * 64, hei * 64);
+            else if (game->map_len[hei * game->width + wid] == 'E')
+                mlx_put_image_to_window(game->mlx, game->win, image->img_exit, wid * 64, hei * 64);
+            else if (game->map_len[hei * game->width + wid] == '0')
+                mlx_put_image_to_window(game->mlx, game->win, image->img_space, wid * 64, hei * 64);
             wid++;
         }
         hei++;
@@ -89,29 +89,28 @@ void    setting_img(t_long *solong, t_imge *image, t_map *map)
 
 int main(int argc, char *argv[])
 {
-    t_long  solong;
+    t_game  game;
     t_imge  image;
     t_param param;
-    t_map  map;
 
-    param_init(&param);
-    solong.mlx = mlx_init();
-    solong.win = mlx_new_window(solong.mlx, 500, 250, "My_so_long 1337");
-    map_read(argv[argc - 1], &map);
-    image.img_player = mlx_xpm_file_to_image(solong.mlx, IMAGE_PLAYER, &image.img_width, &image.img_height);
-    image.img_exit = mlx_xpm_file_to_image(solong.mlx, IMAGE_EXIT, &image.img_width, &image.img_height);
-    image.img_coll = mlx_xpm_file_to_image(solong.mlx, IMAGE_COLL, &image.img_width, &image.img_height);
-    image.img_space = mlx_xpm_file_to_image(solong.mlx, IMAGE_SPACE, &image.img_width, &image.img_height);
-    image.img_wall = mlx_xpm_file_to_image(solong.mlx, IMAGE_WALL, &image.img_width, &image.img_height);
-    setting_img(&solong, &image, &map);
-    // mlx_put_image_to_window(solong.mlx, solong.win, image.img_player, 0, 0);
-    // mlx_put_image_to_window(solong.mlx, solong.win, image.img_exit, 64, 0);
-    // mlx_put_image_to_window(solong.mlx, solong.win, image.img_coll, 120, 0);
-    // mlx_put_image_to_window(solong.mlx, solong.win, image.img_space, 0, 64);
-    // mlx_put_image_to_window(solong.mlx, solong.win, image.img_wall, 0, 0);
-    mlx_hook(solong.win, X_EVENT_KEY_RELEASE, 0, &key_press, &param);
+    // param_init(&param);
+    map_read(argv[argc - 1], &game);
+    game.mlx = mlx_init();
+    game.win = mlx_new_window(game.mlx, game.width * 64, game.height * 64, "My_so_long 1337");
+    image.img_player = mlx_xpm_file_to_image(game.mlx, IMAGE_PLAYER, &image.img_width, &image.img_height);
+    image.img_exit = mlx_xpm_file_to_image(game.mlx, IMAGE_EXIT, &image.img_width, &image.img_height);
+    image.img_coll = mlx_xpm_file_to_image(game.mlx, IMAGE_COLL, &image.img_width, &image.img_height);
+    image.img_space = mlx_xpm_file_to_image(game.mlx, IMAGE_SPACE, &image.img_width, &image.img_height);
+    image.img_wall = mlx_xpm_file_to_image(game.mlx, IMAGE_WALL, &image.img_width, &image.img_height);
+    setting_img(&game, &image);
+    // mlx_put_image_to_window(game.mlx, game.win, image.img_player, 0, 0);
+    // mlx_put_image_to_window(game.mlx, game.win, image.img_exit, 64, 0);
+    // mlx_put_image_to_window(game.mlx, game.win, image.img_coll, 120, 0);
+    // mlx_put_image_to_window(game.mlx, game.win, image.img_space, 0, 64);
+    // mlx_put_image_to_window(game.mlx, game.win, image.img_wall, 0, 0);
+    mlx_hook(game.win, X_EVENT_KEY_RELEASE, 0, &key_press, &param);
     
-    mlx_loop(solong.mlx);
+    mlx_loop(game.mlx);
     return (0);
 }
 

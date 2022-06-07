@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/07 13:45:32 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:01:50 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,14 @@
 # define IMAGE_EXIT     "./images/E.xpm"
 # define IMAGE_PLAYER   "./images/P.xpm"
 
-typedef struct s_long
+typedef struct s_game
 {
     void    *mlx;
     void    *win;
-}   t_long;
+    int     height;
+    int     width;
+    char    *map_len;
+}   t_game;
 
 typedef struct s_param
 {
@@ -58,12 +61,6 @@ typedef struct s_imge
     int     img_width;
 }   t_imge;
 
-typedef struct s_map
-{
-    int     height;
-    int     width;
-    char    *str_line;
-}   t_map;
 
 size_t	ft_strlen(const char *s);
 char	*get_next_line(int fd);
