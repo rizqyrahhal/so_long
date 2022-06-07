@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/07 12:00:31 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/07 13:45:32 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@
 # define KEY_S      1
 # define KEY_D      2
 
+# define IMAGE_WALL     "./images/1.xpm"
+# define IMAGE_SPACE    "./images/0.xpm"
+# define IMAGE_COLL     "./images/C.xpm"
+# define IMAGE_EXIT     "./images/E.xpm"
+# define IMAGE_PLAYER   "./images/P.xpm"
+
 typedef struct s_long
 {
     void    *mlx;
@@ -43,21 +49,21 @@ typedef struct s_param
 
 typedef struct s_imge
 {
-    void    *img1;
-    void    *img2;
-    void    *img3;
-    void    *img4;
-    void    *img5;
-    int     img_wigth;
+    void    *img_player;
+    void    *img_exit;
+    void    *img_coll;
+    void    *img_space;
+    void    *img_wall;
     int     img_height;
+    int     img_width;
 }   t_imge;
 
-typedef struct s_game
+typedef struct s_map
 {
-    int     hei;
-    int     wid;
+    int     height;
+    int     width;
     char    *str_line;
-}   t_game;
+}   t_map;
 
 size_t	ft_strlen(const char *s);
 char	*get_next_line(int fd);
