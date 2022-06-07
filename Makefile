@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/02 22:03:03 by rarahhal          #+#    #+#              #
-#    Updated: 2022/06/03 23:40:04 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/06/07 11:46:52 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,22 @@ FLAGS = -Wall -Werror -Wextra
 CC = CC
 
 SRCS = Mandatory/so_long.c \
+		Mandatory/get_next_line.c \
 
 BONUS_SRCS = 
 
-LIBFT = 
+LIBFT = Libft/ft_calloc.c \
+		Libft/ft_strchr.c \
+		Libft/ft_strjoin.c \
+		Libft/ft_strlen.c \
+		Libft/ft_strdup.c \
 
 OBJS = $(SRCS:.c=.o)
 OBJS_L = $(LIBFT:.c=.o)
 OBJS_B = $(BONUS_SRCS:.c=.o)
 
 $(NAME): $(OBJS) $(OBJS_L)
-	$(CC)  -Lmlx -lmlx -framework OpenGL -framework AppKit $(FLAGS) $(OBJS) $(OBJS_L) -o $(NAME)
+	$(CC) $(FLAGS) -L./mlx -lmlx -framework OpenGL -framework AppKit $(OBJS) $(OBJS_L) -o $(NAME)
 
 $(NAME_BONUS): $(OBJS_B) $(OBJS_L)
 	$(CC) $(FLAGS) $(OBJS_B) $(OBJS_L) -o $(NAME_BONUS)
