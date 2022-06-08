@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/08 13:14:29 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/08 14:05:38 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,16 @@ void    setting_img(t_game *game, t_imge *image)
 {
     int hei;
     int wid;
+    int height;
+    int width;
 
     hei = 0;
-    while (hei < game->height)
+    height = game->height;
+    width = game->width;
+    while (hei < height)
     {
         wid = 0;
-        while (wid < game->width)
+        while (wid < width)
         {
             if (game->map_len[hei * game->width + wid] == '1')
                 mlx_put_image_to_window(game->mlx, game->win, image->img_wall, wid * 64, hei * 64);
@@ -132,7 +136,7 @@ int main(int argc, char *argv[])
     t_imge  image;
     t_param param;
 
-    // param_init(&param);
+    param_init(&param);
     map_read(argv[argc - 1], &game);
     game.mlx = mlx_init();
     game.win = mlx_new_window(game.mlx, game.width * 64, game.height * 64, "My_so_long 1337");
