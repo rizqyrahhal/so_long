@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/07 21:01:50 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:43:40 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,16 @@
 
 typedef struct s_game
 {
+    // t_imge  *image;
     void    *mlx;
     void    *win;
     int     height;
     int     width;
     char    *map_len;
+    int     all_coll;
+    int     coll_cnt;
+    int     walk_cnt;
 }   t_game;
-
-typedef struct s_param
-{
-    int x;
-    int y;
-}   t_param;
 
 typedef struct s_imge
 {
@@ -61,6 +59,11 @@ typedef struct s_imge
     int     img_width;
 }   t_imge;
 
+typedef struct s_param
+{
+    int x;
+    int y;
+}   t_param;
 
 size_t	ft_strlen(const char *s);
 char	*get_next_line(int fd);

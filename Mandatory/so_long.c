@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/07 21:32:50 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:14:29 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,45 @@ void    setting_img(t_game *game, t_imge *image)
     }
 }
 
+void    move_w(t_imge image,t_game game)
+{
+    int i;
+
+    i = -1;
+    game.all_coll = 5;
+    game.walk_cnt = 0;
+    while (++i < ft_strlen(game.map_len))
+        if (game.map_len[i] == 'P')
+            break ;
+    if (game.map_len[i - game.width] == 'C')
+        game.coll_cnt++;
+    if (game.map_len[i - game.width] == 'E' && game.all_coll == game.coll_cnt)
+        exit (EXIT_SUCCESS);
+    else if (game.map_len[i - game.width] != '1' && game.map_len[i - game.width] != 'E')
+    {
+        game.map_len[i] = '0';
+        game.map_len[i - game.width] = 'P';
+        game.walk_cnt++;
+        printf("walk_cnt = %d\n", game.walk_cnt);
+        setting_img(&game, &image);
+    }
+}
+
+int press_key(int key_code, t_imge image, t_game game)
+{
+    if (key_code == KEY_ESC)
+        exit(EXIT_SUCCESS);
+    if (key_code == KEY_W)
+        move_w(image, game);
+    // if (key_code == KEY_A)
+    //     move_a(game);
+    // if (key_code == KEY_S)
+    //     move_s(game);
+    // if (key_code == KEY_D)
+    //     move_d(game);
+    return (0);
+}
+
 int main(int argc, char *argv[])
 {
     t_game  game;
@@ -108,7 +147,7 @@ int main(int argc, char *argv[])
     // mlx_put_image_to_window(game.mlx, game.win, image.img_coll, 120, 0);
     // mlx_put_image_to_window(game.mlx, game.win, image.img_space, 0, 64);
     // mlx_put_image_to_window(game.mlx, game.win, image.img_wall, 0, 0);
-    mlx_hook(game.win, X_EVENT_KEY_RELEASE, 0, &key_press, &param);
+    mlx_hook(game.win, X_EVENT_KEY_RELEASE, 0, &press_key, &param);
     
     mlx_loop(game.mlx);
     return (0);
