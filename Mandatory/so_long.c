@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/08 14:05:38 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/11 15:15:53 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,12 @@ void    setting_img(t_game *game, t_imge *image)
 {
     int hei;
     int wid;
-    int height;
-    int width;
 
     hei = 0;
-    height = game->height;
-    width = game->width;
-    while (hei < height)
+    while (hei < game->height)
     {
         wid = 0;
-        while (wid < width)
+        while (wid < game->width)
         {
             if (game->map_len[hei * game->width + wid] == '1')
                 mlx_put_image_to_window(game->mlx, game->win, image->img_wall, wid * 64, hei * 64);
@@ -98,9 +94,10 @@ void    move_w(t_imge image,t_game game)
     i = -1;
     game.all_coll = 5;
     game.walk_cnt = 0;
-    while (++i < ft_strlen(game.map_len))
+    
+    while (++i < ft_strlen(game.map_len) && game.map_len[i])   // erro here in value
         if (game.map_len[i] == 'P')
-            break ;
+            break ; 
     if (game.map_len[i - game.width] == 'C')
         game.coll_cnt++;
     if (game.map_len[i - game.width] == 'E' && game.all_coll == game.coll_cnt)
@@ -117,6 +114,7 @@ void    move_w(t_imge image,t_game game)
 
 int press_key(int key_code, t_imge image, t_game game)
 {
+    // printf("--##%zu\n", ft_strlen(game->map_len));
     if (key_code == KEY_ESC)
         exit(EXIT_SUCCESS);
     if (key_code == KEY_W)
