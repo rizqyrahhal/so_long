@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/13 18:44:11 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/13 21:12:02 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void    map_read(char   *filename, t_game *game)
     line = get_next_line(fd);
     game->height = 0;
     game->width = ft_strlen(line);
-    game->map_len = ft_strdup(line);
+    game->map_len = ft_strdup(line); 
     free(line);
     while(line)
     {
@@ -57,32 +57,35 @@ void    map_read(char   *filename, t_game *game)
             game->map_len = ft_strjoin(game->map_len ,line);
         free(line);
     }
+    free(line);
     close(fd);
 }
 
-void    setting_img(t_game game, t_imge image)
+void    setting_img(t_game game)
 {
     int hei;
     int wid;
 
     hei = 0;
     // printf("height= %d\nwidth = %d\n", game.height, game.width);
-    printf("map_len: %s\n", game.map_len);
+    // printf("map_len: %s\n", game.map_len);
+    // printf("map_len = %zu\n", ft_strlen(game.map_len));
     while (hei < game.height)
     {
+       
         wid = 0;
         while (wid < game.width)
         {
             if (game.map_len[hei * game.width + wid] == '1')
-                mlx_put_image_to_window(game.mlx, game.win, image.img_wall, wid * 64, hei * 64);
+                mlx_put_image_to_window(game.mlx, game.win, game.img_wall, wid * 64, hei * 64);
             else if (game.map_len[hei * game.width + wid] == 'C')
-                mlx_put_image_to_window(game.mlx, game.win, image.img_coll, wid * 64, hei * 64);
+                mlx_put_image_to_window(game.mlx, game.win, game.img_coll, wid * 64, hei * 64);
             else if (game.map_len[hei * game.width + wid] == 'P')
-                mlx_put_image_to_window(game.mlx, game.win, image.img_player, wid * 64, hei * 64);
+                mlx_put_image_to_window(game.mlx, game.win, game.img_player, wid * 64, hei * 64);
             else if (game.map_len[hei * game.width + wid] == 'E')
-                mlx_put_image_to_window(game.mlx, game.win, image.img_exit, wid * 64, hei * 64);
+               mlx_put_image_to_window(game.mlx, game.win, game.img_exit, wid * 64, hei * 64);
             else if (game.map_len[hei * game.width + wid] == '0')
-                mlx_put_image_to_window(game.mlx, game.win, image.img_space, wid * 64, hei * 64);
+                mlx_put_image_to_window(game.mlx, game.win, game.img_space, wid * 64, hei * 64);
             wid++;
         }
         hei++;
@@ -94,6 +97,7 @@ void    move_w(t_game *game, t_imge *image)
     int i;
 
     i = -1;
+    printf("TTTTTTTTTT\n");
     game->all_coll = 1; // hard code
     game->walk_cnt = 0; // hard code
     while (++i < ft_strlen(game->map_len) && game->map_len[i])   // pour git position of playre
@@ -111,7 +115,8 @@ void    move_w(t_game *game, t_imge *image)
         game->map_len[i - game->width] = 'P';
         game->walk_cnt++;
         printf("walk_cnt = %d\n", game->walk_cnt);
-        setting_img(*game, *image);
+        setting_img(*game);
+        
     }
 }
 
@@ -121,33 +126,34 @@ int press_key(int key_code, t_game *game, t_imge *image)
         exit(EXIT_SUCCESS);
     if (key_code == KEY_W)
         move_w(game, image);
-    // if (key_code == KEY_A)
-    //     move_a(game);
-    // if (key_code == KEY_S)
-    //     move_s(game);
-    // if (key_code == KEY_D)
-    //     move_d(game);
+    //  if (key_code == KEY_A)
+    //         move_a(game);
+    //  if (key_code == KEY_S)
+    //         move_s(game);
+    //  if (key_code == KEY_D)
+    //         move_d(game);
     return (0);
 }
 
 int main(int argc, char *argv[])
 {
     t_game  game;
-    t_imge  image;
-    t_param param;
+    // t_param param;
 
     // param_init(&param);
+
     map_read(argv[argc - 1], &game);
+    
     game.mlx = mlx_init();
     game.win = mlx_new_window(game.mlx, game.width * 64, game.height * 64, "My_so_long 1337");
-    image.img_player = mlx_xpm_file_to_image(game.mlx, IMAGE_PLAYER, &image.img_width, &image.img_height);
-    image.img_exit = mlx_xpm_file_to_image(game.mlx, IMAGE_EXIT, &image.img_width, &image.img_height);
-    image.img_coll = mlx_xpm_file_to_image(game.mlx, IMAGE_COLL, &image.img_width, &image.img_height);
-    image.img_space = mlx_xpm_file_to_image(game.mlx, IMAGE_SPACE, &image.img_width, &image.img_height);
-    image.img_wall = mlx_xpm_file_to_image(game.mlx, IMAGE_WALL, &image.img_width, &image.img_height);
-    setting_img(game, image);    
-    mlx_hook(game.win, X_EVENT_KEY_RELEASE, 0, &press_key, &game);
-    
+    game.img_player = mlx_xpm_file_to_image(game.mlx, IMAGE_PLAYER, &game.img_width, &game.img_height);
+    game.img_exit = mlx_xpm_file_to_image(game.mlx, IMAGE_EXIT, &game.img_width, &game.img_height);
+    game.img_coll = mlx_xpm_file_to_image(game.mlx, IMAGE_COLL, &game.img_width,&game.img_height);
+    game.img_space = mlx_xpm_file_to_image(game.mlx, IMAGE_SPACE, &game.img_width,&game.img_height);
+    game.img_wall = mlx_xpm_file_to_image(game.mlx, IMAGE_WALL, &game.img_width, &game.img_height);
+    setting_img(game);
+    mlx_key_hook(game.win, &press_key, &game);
+    // mlx_hook(game.win, X_EVENT_KEY_RELEASE, 0, &press_key, &game);
     mlx_loop(game.mlx);
     return (0);
 }
