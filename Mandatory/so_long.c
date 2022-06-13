@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/13 21:12:02 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/13 21:16:39 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void    setting_img(t_game game)
     }
 }
 
-void    move_w(t_game *game, t_imge *image)
+void    move_w(t_game *game)
 {
     int i;
 
@@ -120,12 +120,12 @@ void    move_w(t_game *game, t_imge *image)
     }
 }
 
-int press_key(int key_code, t_game *game, t_imge *image)
+int press_key(int key_code, t_game *game)
 {
     if (key_code == KEY_ESC)
         exit(EXIT_SUCCESS);
     if (key_code == KEY_W)
-        move_w(game, image);
+        move_w(game);
     //  if (key_code == KEY_A)
     //         move_a(game);
     //  if (key_code == KEY_S)
