@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/14 11:15:13 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:56:26 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-# define X_EVENT_KEY_PRESS      2
-# define X_EVENT_KEY_RELEASE    3
+# define X_EVENT_KEY_EXIT       17
+
 
 # define KEY_ESC    53
 # define KEY_W      13
@@ -63,6 +63,7 @@ char	*ft_strdup(const char *s1);
 
 // helper Function
 void    map_read(char   *filename, t_game *game);
+void    ft_error(char *error);
 void    setting_img(t_game game);
 int     key_hook(int key_code, t_game *game);
 void    move_w(t_game *game);

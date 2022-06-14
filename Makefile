@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/02 22:03:03 by rarahhal          #+#    #+#              #
-#    Updated: 2022/06/14 10:58:57 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/06/14 12:26:42 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CC = CC
 
 SRCS = Mandatory/so_long.c \
 		Mandatory/get_next_line.c \
-		Mandatory/read_map.c \
+		Mandatory/setting_map.c \
+		Mandatory/ft_error.c \
 		Mandatory/setting_img.c \
 		Mandatory/moving_player.c \
 		Mandatory/hook.c \

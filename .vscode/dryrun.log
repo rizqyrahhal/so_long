@@ -1,5 +1,17 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/rarahhal/Desktop/so_long'
-make: `so_long' is up to date.
+CC    -c -o Mandatory/so_long.o Mandatory/so_long.c
+CC    -c -o Mandatory/get_next_line.o Mandatory/get_next_line.c
+CC    -c -o Mandatory/setting_map.o Mandatory/setting_map.c
+CC    -c -o Mandatory/ft_error.o Mandatory/ft_error.c
+CC    -c -o Mandatory/setting_img.o Mandatory/setting_img.c
+CC    -c -o Mandatory/moving_player.o Mandatory/moving_player.c
+CC    -c -o Mandatory/hook.o Mandatory/hook.c
+CC    -c -o Libft/ft_calloc.o Libft/ft_calloc.c
+CC    -c -o Libft/ft_strchr.o Libft/ft_strchr.c
+CC    -c -o Libft/ft_strjoin.o Libft/ft_strjoin.c
+CC    -c -o Libft/ft_strlen.o Libft/ft_strlen.c
+CC    -c -o Libft/ft_strdup.o Libft/ft_strdup.c
+CC -Wall -Werror -Wextra -L./mlx -lmlx -framework OpenGL -framework AppKit Mandatory/so_long.o Mandatory/get_next_line.o Mandatory/setting_map.o Mandatory/ft_error.o Mandatory/setting_img.o Mandatory/moving_player.o Mandatory/hook.o Libft/ft_calloc.o Libft/ft_strchr.o Libft/ft_strjoin.o Libft/ft_strlen.o Libft/ft_strdup.o -o so_long
 make: Leaving directory `/Users/rarahhal/Desktop/so_long'
  

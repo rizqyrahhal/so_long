@@ -7,12 +7,13 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
+make: *** No rule to make target `Mandatory/so_long.o', needed by `so_long'.  Stop.
 
-# Make data base, printed on Tue Jun 14 10:59:01 2022
+
+# Make data base, printed on Tue Jun 14 12:26:43 2022
 
 # Variables
 
- 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -39,7 +40,7 @@ NAME_BONUS =
 MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from `Makefile', line 35)
+# makefile (from `Makefile', line 36)
 OBJS = $(SRCS:.c=.o)
 # environment
 VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0000jvr0004fy/T/vscode-ipc-a3f1d138-99b2-4b16-b15a-00e2cb631a27.sock
@@ -49,7 +50,7 @@ VSCODE_CWD = /
 Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.BkpZyphqmF/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
-# makefile (from `Makefile', line 37)
+# makefile (from `Makefile', line 38)
 OBJS_B = $(BONUS_SRCS:.c=.o)
 # environment
 VSCODE_LOG_STACK = false
@@ -61,7 +62,7 @@ ELECTRON_RUN_AS_NODE = 1
 SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.hX9eeV6E9h/Listeners
 # automatic
 %F = $(notdir $%)
-# makefile (from `Makefile', line 27)
+# makefile (from `Makefile', line 28)
 BONUS_SRCS = 
 # environment
 VSCODE_PIPE_LOGGING = true
@@ -92,10 +93,10 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 18)
-SRCS = Mandatory/so_long.c Mandatory/get_next_line.c Mandatory/read_map.c Mandatory/setting_img.c Mandatory/moving_player.c Mandatory/hook.c 
+SRCS = Mandatory/so_long.c Mandatory/get_next_line.c Mandatory/setting_map.c Mandatory/ft_error.c Mandatory/setting_img.c Mandatory/moving_player.c Mandatory/hook.c 
 # environment
 SHLVL = 1
-# makefile (from `Makefile', line 29)
+# makefile (from `Makefile', line 30)
 LIBFT = Libft/ft_calloc.c Libft/ft_strchr.c Libft/ft_strjoin.c Libft/ft_strlen.c Libft/ft_strdup.c 
 # makefile (from `Makefile', line 16)
 CC = CC
@@ -126,7 +127,6 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
- 
 XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
@@ -154,7 +154,7 @@ FLAGS = -Wall -Werror -Wextra
 .INCLUDE_DIRS = /usr/local/include
 # environment
 MAKELEVEL := 0
-# makefile (from `Makefile', line 36)
+# makefile (from `Makefile', line 37)
 OBJS_L = $(LIBFT:.c=.o)
 # environment
 LANG = C
@@ -169,9 +169,9 @@ VSCODE_PID = 63433
 
 # Directories
 
-# . (device 16777227, inode 316525): 14 files, no impossibilities.
+# . (device 16777227, inode 316525): 13 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -184,8 +184,7 @@ all: so_long
 #  Command-line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has been updated.
-#  Successfully updated.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -196,19 +195,15 @@ all: so_long
 
 # Not a target:
 Libft/ft_strlen.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-14 10:57:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Mandatory/so_long.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-14 10:57:28
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -220,17 +215,14 @@ Mandatory/so_long.o:
 
 # Not a target:
 Libft/ft_strjoin.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-14 10:57:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-14 10:58:57
+#  Last modified 2022-06-14 12:26:42
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -238,12 +230,9 @@ Makefile:
 
 # Not a target:
 Mandatory/setting_img.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-14 10:57:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 bonus:
 #  Phony target (prerequisite of .PHONY).
@@ -256,19 +245,22 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 56):
+#  commands to execute (from `Makefile', line 57):
 	@rm -f $(NAME)
 	@rm -f $(NAME_BONUS)
 	
 
 # Not a target:
+Mandatory/setting_map.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 Libft/ft_calloc.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-14 10:57:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -281,7 +273,7 @@ re: fclean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 60):
+#  commands to execute (from `Makefile', line 61):
 	@make all
 	
 
@@ -290,7 +282,7 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 51):
+#  commands to execute (from `Makefile', line 52):
 	@rm -f bonus/*.o
 	@rm -f Mandatory/*.o
 	@rm -f libft/*.o
@@ -298,71 +290,53 @@ clean:
 
 # Not a target:
 Libft/ft_strdup.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-14 10:57:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Mandatory/moving_player.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-14 10:58:58
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Mandatory/get_next_line.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-14 10:57:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Libft/ft_strchr.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-14 10:57:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-so_long: Mandatory/so_long.o Mandatory/get_next_line.o Mandatory/read_map.o Mandatory/setting_img.o Mandatory/moving_player.o Mandatory/hook.o Libft/ft_calloc.o Libft/ft_strchr.o Libft/ft_strjoin.o Libft/ft_strlen.o Libft/ft_strdup.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-14 10:58:58
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
+
+so_long: Mandatory/so_long.o Mandatory/get_next_line.o Mandatory/setting_map.o Mandatory/ft_error.o Mandatory/setting_img.o Mandatory/moving_player.o Mandatory/hook.o Libft/ft_calloc.o Libft/ft_strchr.o Libft/ft_strjoin.o Libft/ft_strlen.o Libft/ft_strdup.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 40):
+#  commands to execute (from `Makefile', line 41):
+ 
 	$(CC) $(FLAGS) -L./mlx -lmlx -framework OpenGL -framework AppKit $(OBJS) $(OBJS_L) -o $(NAME)
 	
 
 # Not a target:
 Mandatory/hook.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-14 10:57:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-Mandatory/read_map.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-14 10:57:28
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+Mandatory/ft_error.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=21/1024=2%, Rehash=0, Collisions=2/53=4%
+# Load=22/1024=2%, Rehash=0, Collisions=2/55=4%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -374,6 +348,6 @@ Mandatory/read_map.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jun 14 10:59:01 2022
+# Finished Make data base on Tue Jun 14 12:26:43 2022
 
  
