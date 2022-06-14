@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:52:05 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/14 11:21:43 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/14 18:06:08 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void    move_s(t_game *game)
     int i;
 
     i = -1;
-    while (++i < ft_strlen(game->map_len) && game->map_len[i])   // git position of playre
+    while (++i < ft_strlen(game->map_len) && game->map_len[i])
         if (game->map_len[i] == 'P')
             break ;
     if (game->map_len[i + game->width] == 'C')
