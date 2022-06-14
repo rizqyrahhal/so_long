@@ -6,12 +6,12 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/02 22:03:03 by rarahhal          #+#    #+#              #
-#    Updated: 2022/06/14 12:26:42 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/06/14 20:10:42 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-NAME_BONUS = 
+NAME_BONUS = so_long_bonus
 FLAGS = -Wall -Werror -Wextra
 CC = CC
 
@@ -20,18 +20,23 @@ SRCS = Mandatory/so_long.c \
 		Mandatory/setting_map.c \
 		Mandatory/ft_error.c \
 		Mandatory/setting_img.c \
-		Mandatory/moving_player.c \
 		Mandatory/hook.c \
-		
-		
+		Mandatory/moving_player.c \
 
-BONUS_SRCS = 
+BONUS_SRCS = bonus/so_long_bonus.c \
+			bonus/get_next_line.c \
+			bonus/setting_map.c \
+			bonus/ft_error.c \
+			bonus/setting_img.c \
+			bonus/moving_player.c \
+			bonus/hook.c \
 
 LIBFT = Libft/ft_calloc.c \
 		Libft/ft_strchr.c \
 		Libft/ft_strjoin.c \
 		Libft/ft_strlen.c \
 		Libft/ft_strdup.c \
+		Libft/ft_putnbr.c \
 
 OBJS = $(SRCS:.c=.o)
 OBJS_L = $(LIBFT:.c=.o)
@@ -42,7 +47,6 @@ $(NAME): $(OBJS) $(OBJS_L)
 
 $(NAME_BONUS): $(OBJS_B) $(OBJS_L)
 	$(CC) $(FLAGS) -L./mlx -lmlx -framework OpenGL -framework AppKit $(OBJS_B) $(OBJS_L) -o $(NAME_BONUS)
-
 
 all: $(NAME)
 
@@ -59,6 +63,5 @@ fclean: clean
 
 re: fclean
 	@make all
-
 
 .PHONY: all bonus clean fclean re

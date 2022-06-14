@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/14 20:08:17 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/14 19:34:16 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,13 @@
 # define IMAGE_COLL     "./images/C.xpm"
 # define IMAGE_EXIT     "./images/E.xpm"
 # define IMAGE_PLAYER   "./images/P.xpm"
+# define IMAGE_PLAYER_MV   "./images/PP.xpm"
 
 
 typedef struct s_game
 {
     void    *img_player;
+    void    *img_player_mv;
     void    *img_exit;
     void    *img_coll;
     void    *img_space;
@@ -62,7 +64,6 @@ size_t	ft_strlen(const char *s);
 char	*get_next_line(int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s1);
-void	ft_putnbr(int n);
 
 // helper Function
 void    map_read(char   *filename, t_game *game);
