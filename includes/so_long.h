@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/13 21:12:47 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:15:13 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,6 @@
 # define IMAGE_EXIT     "./images/E.xpm"
 # define IMAGE_PLAYER   "./images/P.xpm"
 
-typedef struct s_imge
-{
-    void    *img_player;
-    void    *img_exit;
-    void    *img_coll;
-    void    *img_space;
-    void    *img_wall;
-    int     img_height;
-    int     img_width;
-}   t_imge;
-
 typedef struct s_game
 {
     void    *img_player;
@@ -66,17 +55,25 @@ typedef struct s_game
 }   t_game;
 
 
-
-// typedef struct s_param
-// {
-//     int x;
-//     int y;
-// }   t_param;
-
+// libft
 size_t	ft_strlen(const char *s);
 char	*get_next_line(int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s1);
+
+// helper Function
+void    map_read(char   *filename, t_game *game);
+void    setting_img(t_game game);
+int     key_hook(int key_code, t_game *game);
+void    move_w(t_game *game);
+void    move_a(t_game *game);
+void    move_d(t_game *game);
+void    move_s(t_game *game);
+
+
+
+
+
 
 
 #endif

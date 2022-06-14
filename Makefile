@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/02 22:03:03 by rarahhal          #+#    #+#              #
-#    Updated: 2022/06/07 11:46:52 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/06/14 10:58:57 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,12 @@ CC = CC
 
 SRCS = Mandatory/so_long.c \
 		Mandatory/get_next_line.c \
+		Mandatory/read_map.c \
+		Mandatory/setting_img.c \
+		Mandatory/moving_player.c \
+		Mandatory/hook.c \
+		
+		
 
 BONUS_SRCS = 
 
@@ -34,7 +40,7 @@ $(NAME): $(OBJS) $(OBJS_L)
 	$(CC) $(FLAGS) -L./mlx -lmlx -framework OpenGL -framework AppKit $(OBJS) $(OBJS_L) -o $(NAME)
 
 $(NAME_BONUS): $(OBJS_B) $(OBJS_L)
-	$(CC) $(FLAGS) $(OBJS_B) $(OBJS_L) -o $(NAME_BONUS)
+	$(CC) $(FLAGS) -L./mlx -lmlx -framework OpenGL -framework AppKit $(OBJS_B) $(OBJS_L) -o $(NAME_BONUS)
 
 
 all: $(NAME)
