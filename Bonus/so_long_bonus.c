@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/15 22:16:54 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/15 23:57:31 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ int main(int argc, char *argv[])
     mlx_hook(game.win, X_EVENT_KEY_EXIT, 0, exit_game, &game);
     // mlx_loop_hook(game.mlx, ft_animation, &game);
     mlx_loop_hook(game.mlx, ft_enemy, &game);
+    // mlx_key_hook(game.win, keel, &game);
     mlx_key_hook(game.win, key_hook, &game);
     // system("leaks so_long");
     // mlx_string_put(game.mlx, game.win, 0, 2, 0xCD, "My_so_long 1337");
