@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/14 19:34:16 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/15 12:12:12 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,24 @@
 # define KEY_S      1
 # define KEY_D      2
 
-# define IMAGE_WALL     "./images/1.xpm"
-# define IMAGE_SPACE    "./images/0.xpm"
-# define IMAGE_COLL     "./images/C.xpm"
-# define IMAGE_EXIT     "./images/E.xpm"
-# define IMAGE_PLAYER   "./images/P.xpm"
-# define IMAGE_PLAYER_MV   "./images/PP.xpm"
+# define IMAGE_WALL     "./images/image_bonus/1.xpm"
+# define IMAGE_SPACE    "./images/image_bonus/0.xpm"
+# define IMAGE_COLL     "./images/image_bonus/C.xpm"
+# define IMAGE_EXIT     "./images/image_bonus/E.xpm"
+# define IMAGE_PLAYER   "./images/image_bonus/P.xpm"
+# define IMAGE_ANIMATION   "./images/image_bonus/A.xpm"
+# define IMAGE_ENEMY   "./images/image_bonus/I.xpm"
 
 
 typedef struct s_game
 {
     void    *img_player;
-    void    *img_player_mv;
     void    *img_exit;
     void    *img_coll;
     void    *img_space;
     void    *img_wall;
+    void    *img_animation;
+    void    *img_enemy;
     int     img_height;
     int     img_width;
     void    *mlx;
@@ -56,6 +58,7 @@ typedef struct s_game
     int     coll_cnt;
     int     walk_cnt;
     int     counter_animation;
+    int     counter_enemy;
 }   t_game;
 
 

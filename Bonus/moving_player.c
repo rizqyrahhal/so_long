@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:52:05 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/14 19:57:49 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/15 12:56:14 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void    move_w(t_game *game)
         exit (EXIT_SUCCESS);
     else if (game->map_len[i - game->width] != '1' && game->map_len[i - game->width] != 'E')
     {
+        // mlx_put_image_to_window(game->mlx, game->win, game->img_space,  3 * 64, 3 * 64);
+        // mlx_put_image_to_window(game->mlx, game->win, game->img_player,  3 * 64, 2 * 64);
         game->map_len[i] = '0';
         game->map_len[i - game->width] = 'P';
         game->walk_cnt++;

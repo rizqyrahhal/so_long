@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/14 20:23:57 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/15 12:45:00 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int exit_game(t_game *game)
 
 int    ft_animation(t_game *game)
 {
+    printf("%d\n", game->counter_animation);
     if (game->counter_animation <= 15)
     {
         mlx_put_image_to_window(game->mlx, game->win, game->img_space, 0, 0);
@@ -38,13 +39,33 @@ int    ft_animation(t_game *game)
     if (game->counter_animation >= 15)
     {
         mlx_put_image_to_window(game->mlx, game->win, game->img_space, 0, 0);
-        mlx_put_image_to_window(game->mlx, game->win, game->img_player_mv, 0, 0);
+        mlx_put_image_to_window(game->mlx, game->win, game->img_animation, 0, 0);
     }
     if (game->counter_animation == 30)
         game->counter_animation = 0;
     game->counter_animation++;
-    // printf("%d\n", game->counter_animation);
     return 0;
+}
+
+int ft_enemy(t_game *game)
+{
+    mlx_put_image_to_window(game->mlx, game->win, game->img_space, 50, 0);
+    mlx_string_put(game->mlx, game->win, 75, 15, 0x0000FF00, "[{###}]");
+    if (game->counter_animation <= 15)
+    {
+        mlx_put_image_to_window(game->mlx, game->win, game->img_space, 0, 0);
+        mlx_put_image_to_window(game->mlx, game->win, game->img_player, 0, 0);
+    }
+    if (game->counter_animation >= 15)
+    {
+        mlx_put_image_to_window(game->mlx, game->win, game->img_space, 0, 0);
+        mlx_put_image_to_window(game->mlx, game->win, game->img_animation, 0, 0);
+    }
+    if (game->counter_animation == 30)
+        game->counter_animation = 0;
+    game->counter_animation++;
+    printf("%d\n", game->walk_cnt);
+    return (0);
 }
 
 int main(int argc, char *argv[])
@@ -56,18 +77,21 @@ int main(int argc, char *argv[])
     map_read(argv[argc - 1], &game);
     game.mlx = mlx_init();
     game.counter_animation = 0;
+    game.counter_enemy = 0;
     game.win = mlx_new_window(game.mlx, game.width * 64, game.height * 64, "My_so_long 1337");
     game.img_player = mlx_xpm_file_to_image(game.mlx, IMAGE_PLAYER, &game.img_width, &game.img_height);
-    game.img_player_mv = mlx_xpm_file_to_image(game.mlx, IMAGE_PLAYER_MV, &game.img_width, &game.img_height);
     game.img_exit = mlx_xpm_file_to_image(game.mlx, IMAGE_EXIT, &game.img_width, &game.img_height);
     game.img_coll = mlx_xpm_file_to_image(game.mlx, IMAGE_COLL, &game.img_width, &game.img_height);
     game.img_space = mlx_xpm_file_to_image(game.mlx, IMAGE_SPACE, &game.img_width, &game.img_height);
     game.img_wall = mlx_xpm_file_to_image(game.mlx, IMAGE_WALL, &game.img_width, &game.img_height);
+    game.img_animation = mlx_xpm_file_to_image(game.mlx, IMAGE_ANIMATION, &game.img_width, &game.img_height);
+    game.img_enemy = mlx_xpm_file_to_image(game.mlx, IMAGE_ENEMY, &game.img_width, &game.img_height);
     setting_img(game);
     collect_number(&game);
     mlx_hook(game.win, X_EVENT_KEY_EXIT, 0, exit_game, &game);
+    // mlx_loop_hook(game.mlx, ft_animation, &game);
+    mlx_loop_hook(game.mlx, ft_enemy, &game);
     mlx_key_hook(game.win, key_hook, &game);
-    mlx_loop_hook(game.mlx, ft_animation, &game);
     // system("leaks so_long");
     // mlx_string_put(game.mlx, game.win, 0, 2, 0xCD, "My_so_long 1337");
     mlx_loop(game.mlx);

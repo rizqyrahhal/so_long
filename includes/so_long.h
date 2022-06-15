@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/14 20:08:17 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/15 11:48:09 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@
 # define KEY_S      1
 # define KEY_D      2
 
-# define IMAGE_WALL     "./images/1.xpm"
-# define IMAGE_SPACE    "./images/0.xpm"
-# define IMAGE_COLL     "./images/C.xpm"
-# define IMAGE_EXIT     "./images/E.xpm"
-# define IMAGE_PLAYER   "./images/P.xpm"
+# define IMAGE_WALL     "./images/image_mandatory/1.xpm"
+# define IMAGE_SPACE    "./images/image_mandatory/0.xpm"
+# define IMAGE_COLL     "./images/image_mandatory/C.xpm"
+# define IMAGE_EXIT     "./images/image_mandatory/E.xpm"
+# define IMAGE_PLAYER   "./images/image_mandatory/P.xpm"
 
 
 typedef struct s_game
