@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/15 14:07:22 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/15 22:16:54 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,13 @@ int ft_enemy(t_game *game)
     // enemy
     // if (game->counter_enemy <= 50)
     // {
-    //     mlx_put_image_to_window(game->mlx, game->win, game->img_space, 2, 2);
-    //     mlx_put_image_to_window(game->mlx, game->win, game->img_enemy, 2, 4);
+    //     mlx_put_image_to_window(game->mlx, game->win, game->img_space, 2 * 64, 2 * 64);
+    //     mlx_put_image_to_window(game->mlx, game->win, game->img_enemy, 2 * 64, 3 * 64);
     // }
     // if (game->counter_enemy >= 50)
     // {
-    //     mlx_put_image_to_window(game->mlx, game->win, game->img_space, 2, 4);
-    //     mlx_put_image_to_window(game->mlx, game->win, game->img_enemy, 2, 5);
+    //     mlx_put_image_to_window(game->mlx, game->win, game->img_space, 2 * 64, 4 * 64);
+    //     mlx_put_image_to_window(game->mlx, game->win, game->img_enemy, 2 * 64, 5 * 64);
     // }
     // if (game->counter_enemy == 100)
     //     game->counter_enemy = 0;
@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
     map_read(argv[argc - 1], &game);
     game.mlx = mlx_init();
     game.counter_animation = 0;
-    game.counter_enemy = 0;
+    // game.counter_enemy = 0;
     game.win = mlx_new_window(game.mlx, game.width * 64, game.height * 64, "My_so_long 1337");
     game.img_player = mlx_xpm_file_to_image(game.mlx, IMAGE_PLAYER, &game.img_width, &game.img_height);
     game.img_exit = mlx_xpm_file_to_image(game.mlx, IMAGE_EXIT, &game.img_width, &game.img_height);

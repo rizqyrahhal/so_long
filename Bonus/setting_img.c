@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:48:15 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/14 19:49:58 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/15 21:48:22 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void    setting_img(t_game game)
                mlx_put_image_to_window(game.mlx, game.win, game.img_exit, wid * 64, hei * 64);
             else if (game.map_len[hei * game.width + wid] == '0')
                 mlx_put_image_to_window(game.mlx, game.win, game.img_space, wid * 64, hei * 64);
+            else if (game.map_len[hei * game.width + wid] == 'N')
+                mlx_put_image_to_window(game.mlx, game.win, game.img_enemy, wid * 64, hei * 64);
             wid++;
         }
         hei++;
