@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/02 22:03:03 by rarahhal          #+#    #+#              #
-#    Updated: 2022/06/14 20:10:42 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/06/15 13:45:45 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ LIBFT = Libft/ft_calloc.c \
 		Libft/ft_strlen.c \
 		Libft/ft_strdup.c \
 		Libft/ft_putnbr.c \
+		Libft/ft_itoa.c \
 
 OBJS = $(SRCS:.c=.o)
 OBJS_L = $(LIBFT:.c=.o)

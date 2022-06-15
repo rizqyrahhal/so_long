@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/15 12:45:00 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/15 14:07:22 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ int exit_game(t_game *game)
 
 int    ft_animation(t_game *game)
 {
-    printf("%d\n", game->counter_animation);
+    char *wlk;
+
+    wlk = ft_itoa(game->walk_cnt);
+    mlx_put_image_to_window(game->mlx, game->win, game->img_space, 50, 0);
+    mlx_string_put(game->mlx, game->win, 90, 20, 0x0000FF00, wlk);
     if (game->counter_animation <= 15)
     {
         mlx_put_image_to_window(game->mlx, game->win, game->img_space, 0, 0);
@@ -49,8 +53,13 @@ int    ft_animation(t_game *game)
 
 int ft_enemy(t_game *game)
 {
+    char *wlk;
+
+    // movement
+    wlk = ft_itoa(game->walk_cnt);
     mlx_put_image_to_window(game->mlx, game->win, game->img_space, 50, 0);
-    mlx_string_put(game->mlx, game->win, 75, 15, 0x0000FF00, "[{###}]");
+    mlx_string_put(game->mlx, game->win, 90, 20, 0x0000FF00, wlk);
+    //  animation
     if (game->counter_animation <= 15)
     {
         mlx_put_image_to_window(game->mlx, game->win, game->img_space, 0, 0);
@@ -64,7 +73,22 @@ int ft_enemy(t_game *game)
     if (game->counter_animation == 30)
         game->counter_animation = 0;
     game->counter_animation++;
-    printf("%d\n", game->walk_cnt);
+
+    // enemy
+    // if (game->counter_enemy <= 50)
+    // {
+    //     mlx_put_image_to_window(game->mlx, game->win, game->img_space, 2, 2);
+    //     mlx_put_image_to_window(game->mlx, game->win, game->img_enemy, 2, 4);
+    // }
+    // if (game->counter_enemy >= 50)
+    // {
+    //     mlx_put_image_to_window(game->mlx, game->win, game->img_space, 2, 4);
+    //     mlx_put_image_to_window(game->mlx, game->win, game->img_enemy, 2, 5);
+    // }
+    // if (game->counter_enemy == 100)
+    //     game->counter_enemy = 0;
+    // game->counter_enemy++;
+    
     return (0);
 }
 

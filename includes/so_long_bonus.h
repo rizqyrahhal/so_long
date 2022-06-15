@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/15 12:12:12 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/15 13:42:25 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ size_t	ft_strlen(const char *s);
 char	*get_next_line(int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s1);
+char	*ft_itoa(int n);
 
 // helper Function
 void    map_read(char   *filename, t_game *game);
