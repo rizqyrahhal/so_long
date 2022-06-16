@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/16 18:24:51 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:45:07 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,17 @@ int exit_game(t_game *game)
     mlx_destroy_window(game->mlx, game->win);
     exit(0);
 }
+
+// void    move_enemy(t_game *game)
+// {
+//     int i;
+
+//     i = -1;
+//     while (++i < ft_strlen(game->map_len) && game->map_len[i])   // git position of enemy
+//         if (game->map_len[i] == 'N')
+//             break ;
+//     printf("%d\n", i);
+// }
 
 int ft_animation(t_game *game)
 {
@@ -53,21 +64,13 @@ int ft_animation(t_game *game)
     if (game->counter_animation == 30)
         game->counter_animation = 0;
     game->counter_animation++;
+    // if (game->touch_enemy == 0)
+    //     move_enemy(game);
 
 
     return (0);
 }
 
-void    move_enemy(t_game *game)
-{
-    int i;
-
-    i = -1;
-    while (++i < ft_strlen(game->map_len) && game->map_len[i])   // git position of enemy
-        if (game->map_len[i] == 'N')
-            break ;
-    printf("%d\n", i);
-}
 
 int main(int argc, char *argv[])
 {
@@ -92,8 +95,6 @@ int main(int argc, char *argv[])
     mlx_hook(game.win, X_EVENT_KEY_EXIT, 0, exit_game, &game);
     mlx_loop_hook(game.mlx, ft_animation, &game);
     mlx_key_hook(game.win, key_hook, &game);
-    // while(game.touch_enemy == 0)
-    //     move_enemy(&game);
     mlx_loop(game.mlx);
     return (0);
 }
