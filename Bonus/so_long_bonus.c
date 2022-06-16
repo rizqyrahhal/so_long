@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/16 19:53:06 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/16 22:35:22 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,72 +27,6 @@ int exit_game(t_game *game)
     mlx_destroy_window(game->mlx, game->win);
     exit(0);
 }
-
-void    move_enemy(t_game *game)
-{
-    int i;
-
-    i = -1;
-    while (++i < ft_strlen(game->map_len) && game->map_len[i])   // git position of enemy
-        if (game->map_len[i] == 'N')
-            break ;
-    if (game->map_len[i - game->width] != '1' && game->map_len[i - game->width] != 'C')
-    {
-        // if (game->map_len[i - game->width] == 'P')
-        //     exit(EXIT_FAILURE);
-        game->map_len[i] = '0';
-        game->map_len[i - game->width] = 'N';
-        mlx_put_image_to_window(game->mlx, game->win, game->img_space, 4 * 64, 2 * 64);
-        mlx_put_image_to_window(game->mlx, game->win, game->img_enemy, 4 * 64, 2 * 64);
-        // setting_img(*game);
-    }
-    i = -1;
-    while (++i < ft_strlen(game->map_len) && game->map_len[i])   // git position of enemy
-        if (game->map_len[i] == 'N')
-            break ;
-    if (game->map_len[i + game->width] != '1' && game->map_len[i + game->width] != 'C')
-    {
-        game->map_len[i] = '0';
-        game->map_len[i + game->width] = 'N';
-        mlx_put_image_to_window(game->mlx, game->win, game->img_space, 4 * 64, 2 * 64);
-        mlx_put_image_to_window(game->mlx, game->win, game->img_enemy, 4 * 64, 2 * 64);
-        // setting_img(*game);
-    }
-    // printf("%d\n", i);
-}
-
-int ft_animation(t_game *game)
-{
-    char *wlk;
-
-    // movement
-    wlk = ft_itoa(game->walk_cnt);
-    if (game->touch_enemy == 0)
-    {
-        mlx_put_image_to_window(game->mlx, game->win, game->img_space, 50, 0);
-        mlx_string_put(game->mlx, game->win, 90, 20, 0x0000FF00, wlk);
-    }
-    //  animation
-    if (game->counter_animation <= 15 && game->touch_enemy == 0)
-    {
-        mlx_put_image_to_window(game->mlx, game->win, game->img_space, 0, 0);
-        mlx_put_image_to_window(game->mlx, game->win, game->img_player, 0, 0);
-    }
-    if (game->counter_animation >= 15 && game->touch_enemy == 0)
-    {
-        mlx_put_image_to_window(game->mlx, game->win, game->img_space, 0, 0);
-        mlx_put_image_to_window(game->mlx, game->win, game->img_animation, 0, 0);
-    }
-    if (game->counter_animation == 30)
-        game->counter_animation = 0;
-    game->counter_animation++;
-
-    if (game->touch_enemy == 0)
-        move_enemy(game);
-    return (0);
-}
-
-
 
 int main(int argc, char *argv[])
 {

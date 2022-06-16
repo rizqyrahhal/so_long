@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:48:15 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/15 21:48:22 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/16 21:59:52 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void    setting_img(t_game game)
     hei = 0;
     while (hei < game.height)
     {
-       
         wid = 0;
         while (wid < game.width)
         {
