@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:52:05 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/16 00:27:37 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/16 15:59:54 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void    move_w(t_game *game)
     if (game->map_len[i - game->width] == 'N')
     {
         mlx_clear_window(game->mlx, game->win);
-        // sleep(5);
         mlx_string_put(game->mlx, game->win, 1000, 150, 0x0000FF00, "losssssssssssse");
-        // exit(0);
+        game->counter_enemy = 404;
+        return;
     }
 }
 
@@ -62,7 +62,9 @@ void    move_a(t_game *game)
     if (game->map_len[i - 1] == 'N')
     {
         mlx_clear_window(game->mlx, game->win);
-        mlx_string_put(game->mlx, game->win, 4 * 64, 4 * 64, 0x0000FF00, "losssssssssssse");
+        mlx_string_put(game->mlx, game->win, 1000, 150, 0x0000FF00, "losssssssssssse");
+        game->counter_enemy = 404;
+        return;
     }
 }
 
@@ -88,7 +90,9 @@ void    move_d(t_game *game)
     if (game->map_len[i + 1] == 'N')
     {
         mlx_clear_window(game->mlx, game->win);
-        mlx_string_put(game->mlx, game->win, 4 * 64, 4 * 64, 0x0000FF00, "losssssssssssse");
+        mlx_string_put(game->mlx, game->win, 1000, 150, 0x0000FF00, "losssssssssssse");
+        game->counter_enemy = 404;
+        return;
     }
 }
 
@@ -114,6 +118,8 @@ void    move_s(t_game *game)
     if (game->map_len[i + game->width] == 'N')
     {
         mlx_clear_window(game->mlx, game->win);
-        mlx_string_put(game->mlx, game->win, 4 * 64, 4 * 64, 0x0000FF00, "losssssssssssse");
+        mlx_string_put(game->mlx, game->win, 1000, 150, 0x0000FF00, "losssssssssssse");
+        game->counter_enemy = 404;
+        return;
     }
 }

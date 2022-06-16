@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/16 00:04:06 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/16 15:50:05 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct s_game
     int     walk_cnt;
     int     counter_animation;
     int     counter_enemy;
+    
 }   t_game;
 
 
@@ -74,11 +75,10 @@ void    map_read(char   *filename, t_game *game);
 void    ft_error(char *error);
 void    setting_img(t_game game);
 int     key_hook(int key_code, t_game *game);
-// int     key_hook(int key_code, t_game *game, int keel());
-void    move_w(t_game *game);
-void    move_a(t_game *game);
-void    move_d(t_game *game);
-void    move_s(t_game *game);
+void     move_w(t_game *game);
+void     move_a(t_game *game);
+void     move_d(t_game *game);
+void     move_s(t_game *game);
 
 
 
