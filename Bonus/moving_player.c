@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:52:05 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/16 18:43:47 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/16 19:46:52 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ void    move_w(t_game *game)
     }
     if (game->map_len[i - game->width] == 'N')
     {
-        write(1, "lose\n", 5);
-        exit(EXIT_FAILURE);
-        // mlx_clear_window(game->mlx, game->win);
-        // mlx_string_put(game->mlx, game->win, 1000, 150, 0x0000FF00, "losssssssssssse");
-        // game->touch_enemy = 404;
+        // write(1, "lose\n", 5);
+        // exit(EXIT_FAILURE);
+        mlx_clear_window(game->mlx, game->win);
+        mlx_string_put(game->mlx, game->win, 1000, 150, 0x0000FF00, "losssssssssssse");
+        game->touch_enemy = 404;
         return;
     }
 }
