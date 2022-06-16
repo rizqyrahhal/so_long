@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/14 19:42:05 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:22:32 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,6 @@ int exit_game(t_game *game)
     exit(0);
 }
 
-// int    ft_animation(t_game *game)
-// {
-//     if (game->counter_animation <= 15)
-//     {
-//         mlx_put_image_to_window(game->mlx, game->win, game->img_space, 0, 0);
-//         mlx_put_image_to_window(game->mlx, game->win, game->img_player, 0, 0);
-//         //mlx_put_image_to_window(game->mlx, game->win, game->img_player, 0, 0);
-//     }
-//     if (game->counter_animation >= 15)
-//     {
-//         mlx_put_image_to_window(game->mlx, game->win, game->img_space, 0, 0);
-//         mlx_put_image_to_window(game->mlx, game->win, game->img_player_mv, 0, 0);
-//     }
-//     if (game->counter_animation == 30)
-//         game->counter_animation = 0;
-//     game->counter_animation++;
-//     printf("%d\n", game->counter_animation);
-//     return 0;
-// }
-
 int main(int argc, char *argv[])
 {
     t_game  game;
@@ -66,18 +46,6 @@ int main(int argc, char *argv[])
     collect_number(&game);
     mlx_hook(game.win, X_EVENT_KEY_EXIT, 0, exit_game, &game);
     mlx_key_hook(game.win, key_hook, &game);
-    // system("leaks so_long");
     mlx_loop(game.mlx);
-    free(game.map_len); //// this is not free
     return (0);
 }
-
-
-
-
-
-
-    // Puts a pixel on the screen :
-    // mlx_pixel_put(solong.mlx, solong.win, 100, 200, 0xCD);
-    // Puts a string on the location (x,y) in the given window:
-    // mlx_string_put(solong.mlx, solong.win, 200, 100, 0xCD, "My_so_long 1337");
