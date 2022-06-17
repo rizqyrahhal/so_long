@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:33:07 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/16 22:33:23 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/17 12:21:42 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int ft_animation(t_game *game)
 {
     char *wlk;
 
+    if (game->touch_enemy == 0)
+        move_enemy(game);
     // movement
     wlk = ft_itoa(game->walk_cnt);
     if (game->touch_enemy == 0)
@@ -38,8 +40,6 @@ int ft_animation(t_game *game)
     if (game->counter_animation == 30)
         game->counter_animation = 0;
     game->counter_animation++;
-    if (game->touch_enemy == 0)
-        move_enemy(game);
     
     return (0);
 }

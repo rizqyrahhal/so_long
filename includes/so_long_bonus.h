@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/16 22:34:50 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/17 12:21:01 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef struct s_game
     int     counter_animation;
     int     touch_enemy;
     int     counter_enemy;
+    int     enemy;
     
 }   t_game;
 
