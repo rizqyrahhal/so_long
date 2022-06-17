@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:52:05 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/17 14:04:07 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/17 20:09:51 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,9 @@ void    move_w(t_game *game)
     }
     if (game->map_len[i - game->width] == 'N')
     {
-        // write(1, "lose\n", 5);
-        // exit(EXIT_FAILURE);
-        mlx_clear_window(game->mlx, game->win);
-        mlx_string_put(game->mlx, game->win, 1000, 150, 0x0000FF00, "losssssssssssse");
         game->touch_enemy = 404;
-        return;
+        write(1, "lose\n", 5);
+        exit(EXIT_FAILURE);
     }
 }
 
@@ -56,7 +53,10 @@ void    move_a(t_game *game)
     if (game->map_len[i - 1] == 'C')
         game->coll_cnt++;
     if (game->map_len[i - 1] == 'E' && game->all_coll == game->coll_cnt)
+    {
+        write(1, "done\n", 5);
         exit (EXIT_SUCCESS);
+    }
     else if (game->map_len[i - 1] != '1' && game->map_len[i - 1] != 'E' && game->map_len[i - 1] != 'N')
     {
         game->map_len[i] = '0';
@@ -66,10 +66,9 @@ void    move_a(t_game *game)
     }
     if (game->map_len[i - 1] == 'N')
     {
-        mlx_clear_window(game->mlx, game->win);
-        mlx_string_put(game->mlx, game->win, 1000, 150, 0x0000FF00, "losssssssssssse");
         game->touch_enemy = 404;
-        return;
+        write(1, "lose\n", 5);
+        exit(EXIT_FAILURE);
     }
 }
 
@@ -84,7 +83,10 @@ void    move_d(t_game *game)
     if (game->map_len[i + 1] == 'C')
         game->coll_cnt++;
     if (game->map_len[i + 1] == 'E' && game->all_coll == game->coll_cnt)
+    {
+        write(1, "done\n", 5);
         exit (EXIT_SUCCESS);
+    }
     else if (game->map_len[i + 1] != '1' && game->map_len[i + 1] != 'E' && game->map_len[i + 1] != 'N')
     {
         game->map_len[i] = '0';
@@ -94,10 +96,9 @@ void    move_d(t_game *game)
     }
     if (game->map_len[i + 1] == 'N')
     {
-        mlx_clear_window(game->mlx, game->win);
-        mlx_string_put(game->mlx, game->win, 1000, 150, 0x0000FF00, "losssssssssssse");
         game->touch_enemy = 404;
-        return;
+        write(1, "lose\n", 5);
+        exit(EXIT_FAILURE);
     }
 }
 
@@ -112,7 +113,10 @@ void    move_s(t_game *game)
     if (game->map_len[i + game->width] == 'C')
         game->coll_cnt++;
     if (game->map_len[i + game->width] == 'E' && game->all_coll == game->coll_cnt)
+    {
+        write(1, "done\n", 5);
         exit (EXIT_SUCCESS);
+    }
     else if (game->map_len[i + game->width] != '1' && game->map_len[i + game->width] != 'E' && game->map_len[i + game->width] != 'N')
     {
         game->map_len[i] = '0';
@@ -122,9 +126,8 @@ void    move_s(t_game *game)
     }
     if (game->map_len[i + game->width] == 'N')
     {
-        mlx_clear_window(game->mlx, game->win);
-        mlx_string_put(game->mlx, game->win, 1000, 150, 0x0000FF00, "losssssssssssse");
         game->touch_enemy = 404;
-        return;
+        write(1, "lose\n", 5);
+        exit(EXIT_FAILURE);
     }
 }
