@@ -7,15 +7,14 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
+make: *** No rule to make target `Mandatory/so_long.o', needed by `so_long'.  Stop.
 
-# Make data base, printed on Fri Jun 17 11:19:15 2022
+
+# Make data base, printed on Fri Jun 17 16:42:28 2022
 
 # Variables
 
 # automatic
- 
-make: *** No rule to make target `Mandatory/so_long.o', needed by `so_long'.  Stop.
-
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
@@ -44,11 +43,11 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 44)
 OBJS = $(SRCS:.c=.o)
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0000jvr0004fy/T/vscode-ipc-636e0b0f-0197-4f6a-8e23-cdb35284c19d.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0000jvr0004fy/T/vscode-ipc-75a9fe1a-37d3-4bbd-8802-5ea84b514130.sock
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.aumbuYvHqf/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.i7BG9TWm4c/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # makefile (from `Makefile', line 46)
@@ -60,7 +59,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.80gBzRN1F5/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.psWg7FbIhL/Listeners
 # automatic
 %F = $(notdir $%)
 # makefile (from `Makefile', line 26)
@@ -82,7 +81,7 @@ VSCODE_CODE_CACHE_PATH = /Users/rarahhal/Library/Application Support/Code/Cached
 # environment
 LOGNAME = rarahhal
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -128,19 +127,23 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.3368
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x11DE:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # default
@@ -156,9 +159,9 @@ OBJS_L = $(LIBFT:.c=.o)
 # environment
 LANG = C
 # environment
-VSCODE_PID = 85151
+VSCODE_PID = 3034
 # variable set hash-table stats:
-# Load=71/1024=7%, Rehash=0, Collisions=5/107=5%
+# Load=73/1024=7%, Rehash=0, Collisions=5/109=5%
 
 # Pattern-specific Variable Values
 
@@ -166,9 +169,9 @@ VSCODE_PID = 85151
 
 # Directories
 
-# . (device 16777227, inode 316525): 13 files, no impossibilities.
+# . (device 16777227, inode 316525): 14 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -306,6 +309,7 @@ so_long_bonus: Bonus/so_long_bonus.o Bonus/get_next_line.o Bonus/setting_map.o B
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -313,7 +317,6 @@ re: fclean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
- 
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 68):
 	@make all
@@ -419,6 +422,6 @@ Bonus/get_next_line.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Jun 17 11:19:16 2022
+# Finished Make data base on Fri Jun 17 16:42:28 2022
 
  

@@ -6,21 +6,11 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:35:07 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/17 14:24:17 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/17 17:32:33 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../includes/so_long_bonus.h"
-
-void calcul_enemy(t_game *game)
-{
-    int i;
-
-    i = -1;
-    while (++i < ft_strlen(game->map_len) && game->map_len[i])
-        if (game->map_len[i] == 'N')
-            game->counter_enemy++;
-}
 
 void    setting_enemy(t_game *game)
 {
@@ -54,24 +44,9 @@ int git_position(t_game *game)
     return (i);
 }
 
-// void    move_up(t_game *game)
-// {
-//     int i;
-
-//     i = git_position(game);
-//     if (game->map_len[i - game->width] != '1' && game->map_len[i - game->width] != 'C')
-//     {
-//         if (game->map_len[i - game->width] == 'P')
-//             exit(EXIT_FAILURE);
-//         game->map_len[i] = '0';
-//         game->map_len[i - game->width] = 'N';
-//         setting_enemy(game);
-//     }
-// }
-
-void    move_one(t_game *game)
+void    move_enemy(t_game *game)
 {
-        int i;
+    int i;
 
     i = git_position(game);
     if (game->map_len[i - game->width] != '1' && game->map_len[i - game->width] != 'C' && game->map_len[i - game->width] != 'E')
@@ -81,8 +56,6 @@ void    move_one(t_game *game)
         game->map_len[i] = '0';
         game->map_len[i - game->width] = 'N';
         setting_enemy(game);
-        
-        i = git_position(game);
     }
     
     else if (*game->map_len && game->map_len[i - game->width])
@@ -122,10 +95,4 @@ void    move_one(t_game *game)
             setting_enemy(game);
         }
     }
-}
-
-void    move_enemy(t_game *game)
-{
-    move_one(game);
-    // printf("%d\n", i);
 }

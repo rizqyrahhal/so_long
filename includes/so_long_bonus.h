@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/17 14:18:49 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/17 15:18:36 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,9 @@ typedef struct s_game
     int     touch_enemy;
     int     counter_enemy;
     int     enemy;
+    int     hie_enemy;
+    int     wid_enemy;
+    
     
 }   t_game;
 
@@ -83,14 +86,6 @@ void    move_d(t_game *game);
 void    move_s(t_game *game);
 int     ft_animation(t_game *game);
 void    move_enemy(t_game *game);
-
-
-
-
-
-
-
-
 
 
 #endif
