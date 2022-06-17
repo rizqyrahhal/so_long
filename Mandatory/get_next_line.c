@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 16:40:12 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/14 14:56:08 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/17 18:10:52 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ char	*get_line(char *stock)
 		line[i] = stock[i];
 		i++;
 	}
-	// if (stock[i] && stock[i] == '\n')
-	// 	line[i] = '\n';
 	return (line);
 }
 

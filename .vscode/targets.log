@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `Mandatory/so_long.o', needed by `so_long'.  Stop.
 
 
-# Make data base, printed on Fri Jun 17 16:42:28 2022
+# Make data base, printed on Fri Jun 17 18:49:41 2022
 
 # Variables
 
@@ -40,7 +40,7 @@ NAME_BONUS = so_long_bonus
 MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from `Makefile', line 44)
+# makefile (from `Makefile', line 45)
 OBJS = $(SRCS:.c=.o)
 # environment
 VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0000jvr0004fy/T/vscode-ipc-75a9fe1a-37d3-4bbd-8802-5ea84b514130.sock
@@ -50,7 +50,7 @@ VSCODE_CWD = /
 Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.i7BG9TWm4c/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
-# makefile (from `Makefile', line 46)
+# makefile (from `Makefile', line 47)
 OBJS_B = $(BONUS_SRCS:.c=.o)
 # environment
 VSCODE_LOG_STACK = false
@@ -62,7 +62,7 @@ ELECTRON_RUN_AS_NODE = 1
 SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.psWg7FbIhL/Listeners
 # automatic
 %F = $(notdir $%)
-# makefile (from `Makefile', line 26)
+# makefile (from `Makefile', line 27)
 BONUS_SRCS = Bonus/so_long_bonus.c Bonus/get_next_line.c Bonus/setting_map.c Bonus/ft_error.c Bonus/setting_img.c Bonus/moving_player.c Bonus/hook.c Bonus/ft_animation.c Bonus/ft_enemy.c 
 # environment
 VSCODE_PIPE_LOGGING = true
@@ -81,7 +81,7 @@ VSCODE_CODE_CACHE_PATH = /Users/rarahhal/Library/Application Support/Code/Cached
 # environment
 LOGNAME = rarahhal
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -93,10 +93,10 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 18)
-SRCS = Mandatory/so_long.c Mandatory/get_next_line.c Mandatory/setting_map.c Mandatory/ft_error.c Mandatory/setting_img.c Mandatory/hook.c Mandatory/moving_player.c 
+SRCS = Mandatory/so_long.c Mandatory/get_next_line.c Mandatory/setting_map.c Mandatory/map_error.c Mandatory/ft_error.c Mandatory/setting_img.c Mandatory/hook.c Mandatory/moving_player.c 
 # environment
 SHLVL = 1
-# makefile (from `Makefile', line 36)
+# makefile (from `Makefile', line 37)
 LIBFT = Libft/ft_calloc.c Libft/ft_strchr.c Libft/ft_strjoin.c Libft/ft_strlen.c Libft/ft_strdup.c Libft/ft_putnbr.c Libft/ft_itoa.c 
 # makefile (from `Makefile', line 16)
 CC = CC
@@ -154,7 +154,7 @@ FLAGS = -Wall -Werror -Wextra
 .INCLUDE_DIRS = /usr/local/include
 # environment
 MAKELEVEL := 0
-# makefile (from `Makefile', line 45)
+# makefile (from `Makefile', line 46)
 OBJS_L = $(LIBFT:.c=.o)
 # environment
 LANG = C
@@ -169,9 +169,9 @@ VSCODE_PID = 3034
 
 # Directories
 
-# . (device 16777227, inode 316525): 14 files, no impossibilities.
+# . (device 16777227, inode 316525): 13 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -252,7 +252,7 @@ Libft/ft_strjoin.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-16 22:35:57
+#  Last modified 2022-06-17 18:49:39
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -281,7 +281,7 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 64):
+#  commands to execute (from `Makefile', line 65):
 	@rm -f $(NAME)
 	@rm -f $(NAME_BONUS)
 	
@@ -302,7 +302,7 @@ so_long_bonus: Bonus/so_long_bonus.o Bonus/get_next_line.o Bonus/setting_map.o B
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 52):
+#  commands to execute (from `Makefile', line 53):
 	$(CC) $(FLAGS) -L./mlx -lmlx -framework OpenGL -framework AppKit $(OBJS_B) $(OBJS_L) -o $(NAME_BONUS)
 	
 
@@ -318,16 +318,22 @@ re: fclean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 68):
+#  commands to execute (from `Makefile', line 69):
 	@make all
 	
+
+# Not a target:
+Mandatory/map_error.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 59):
+#  commands to execute (from `Makefile', line 60):
 	@rm -f bonus/*.o
 	@rm -f Mandatory/*.o
 	@rm -f libft/*.o
@@ -363,13 +369,13 @@ Libft/ft_strchr.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-so_long: Mandatory/so_long.o Mandatory/get_next_line.o Mandatory/setting_map.o Mandatory/ft_error.o Mandatory/setting_img.o Mandatory/hook.o Mandatory/moving_player.o Libft/ft_calloc.o Libft/ft_strchr.o Libft/ft_strjoin.o Libft/ft_strlen.o Libft/ft_strdup.o Libft/ft_putnbr.o Libft/ft_itoa.o
+so_long: Mandatory/so_long.o Mandatory/get_next_line.o Mandatory/setting_map.o Mandatory/map_error.o Mandatory/ft_error.o Mandatory/setting_img.o Mandatory/hook.o Mandatory/moving_player.o Libft/ft_calloc.o Libft/ft_strchr.o Libft/ft_strjoin.o Libft/ft_strlen.o Libft/ft_strdup.o Libft/ft_putnbr.o Libft/ft_itoa.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 49):
+#  commands to execute (from `Makefile', line 50):
 	$(CC) $(FLAGS) -L./mlx -lmlx -framework OpenGL -framework AppKit $(OBJS) $(OBJS_L) -o $(NAME)
 	
 
@@ -410,7 +416,7 @@ Bonus/get_next_line.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=34/1024=3%, Rehash=0, Collisions=6/86=7%
+# Load=35/1024=3%, Rehash=0, Collisions=6/88=7%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -422,6 +428,6 @@ Bonus/get_next_line.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Jun 17 16:42:28 2022
+# Finished Make data base on Fri Jun 17 18:49:41 2022
 
  
