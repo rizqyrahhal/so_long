@@ -6,11 +6,11 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 13:46:37 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/15 13:46:38 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/18 14:04:15 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/so_long.h"
+#include "../includes/so_long.h"
 
 long	ft_nb_len(long nb)
 {

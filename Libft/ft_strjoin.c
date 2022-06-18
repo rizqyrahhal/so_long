@@ -6,11 +6,11 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:26:39 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/16 17:18:31 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/18 14:04:28 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/so_long.h"
+#include "../includes/so_long.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

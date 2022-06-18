@@ -6,11 +6,11 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:28:36 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/07 11:28:57 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/18 14:04:21 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/so_long.h"
+#include "../includes/so_long.h"
 
 char	*ft_strchr(const char *s, int c)
 {	

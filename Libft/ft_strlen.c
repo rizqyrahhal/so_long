@@ -6,11 +6,11 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:24:26 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/07 11:25:51 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/18 14:04:31 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/so_long.h"
+#include "../includes/so_long.h"
 
 size_t	ft_strlen(const char *s)
 {

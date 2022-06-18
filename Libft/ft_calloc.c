@@ -6,11 +6,11 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:27:40 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/07 11:28:16 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/18 14:04:11 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/so_long.h"
+#include "../includes/so_long.h"
 
 void	ft_bzero(void	*s, size_t	n)
 {

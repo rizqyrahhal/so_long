@@ -6,11 +6,11 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 20:07:26 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/14 20:07:38 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/18 14:05:24 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/so_long.h"
+#include "../includes/so_long.h"
 
 void	pp(long nb1)
 
@@ -33,7 +33,7 @@ void	ft_putnbr(int n)
 {
 	long	nb2;
 
-    write(1, "number of movements = ", 22);
+	write (1, "number of movements = ", 22);
 	nb2 = (long)n;
 	if (nb2 < 0)
 	{
@@ -41,5 +41,5 @@ void	ft_putnbr(int n)
 		nb2 = -nb2;
 	}
 	pp(nb2);
-    write(1, "\n", 1);
+	write(1, "\n", 1);
 }

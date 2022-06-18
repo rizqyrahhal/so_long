@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/02 22:03:03 by rarahhal          #+#    #+#              #
-#    Updated: 2022/06/17 18:49:39 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/06/18 13:42:46 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,12 +27,14 @@ SRCS = Mandatory/so_long.c \
 BONUS_SRCS = Bonus/so_long_bonus.c \
 			Bonus/get_next_line.c \
 			Bonus/setting_map.c \
+			Bonus/map_error.c \
 			Bonus/ft_error.c \
 			Bonus/setting_img.c \
 			Bonus/moving_player.c \
 			Bonus/hook.c \
 			Bonus/ft_animation.c \
 			Bonus/ft_enemy.c \
+			Bonus/w_s_a_d_enemy.c \
 
 LIBFT = Libft/ft_calloc.c \
 		Libft/ft_strchr.c \
