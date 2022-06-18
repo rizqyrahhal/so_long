@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/02 22:03:03 by rarahhal          #+#    #+#              #
-#    Updated: 2022/06/18 13:42:46 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/06/18 16:31:03 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,10 +49,10 @@ OBJS_L = $(LIBFT:.c=.o)
 OBJS_B = $(BONUS_SRCS:.c=.o)
 
 $(NAME): $(OBJS) $(OBJS_L)
-	$(CC) $(FLAGS) -L./mlx -lmlx -framework OpenGL -framework AppKit $(OBJS) $(OBJS_L) -o $(NAME)
+	$(CC) $(FLAGS) -lmlx -framework OpenGL -framework AppKit $(OBJS) $(OBJS_L) -o $(NAME)
 
 $(NAME_BONUS): $(OBJS_B) $(OBJS_L)
-	$(CC) $(FLAGS) -L./mlx -lmlx -framework OpenGL -framework AppKit $(OBJS_B) $(OBJS_L) -o $(NAME_BONUS)
+	$(CC) $(FLAGS) -lmlx -framework OpenGL -framework AppKit $(OBJS_B) $(OBJS_L) -o $(NAME_BONUS)
 
 all: $(NAME)
 
