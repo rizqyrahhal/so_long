@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 13:26:46 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/18 13:51:39 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/18 15:12:54 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 void	w(t_game *game, int i)
 {
 	if (game->map_len[i - game->width] == 'P')
+	{
+		write(1, "lose\n", 5);
 		exit(EXIT_FAILURE);
+	}
 	game->map_len[i] = '0';
 	game->map_len[i - game->width] = 'N';
 	setting_enemy(game);
@@ -31,7 +34,10 @@ void	s(t_game *game)
 		&& game->map_len[i + game->width] != 'E')
 	{
 		if (game->map_len[i + game->width] == 'P')
+		{
+			write(1, "lose\n", 5);
 			exit(EXIT_FAILURE);
+		}
 		game->map_len[i] = '0';
 		game->map_len[i + game->width] = 'N';
 		setting_enemy(game);
@@ -47,7 +53,10 @@ void	a(t_game *game)
 		&& game->map_len[i - 1] != 'E')
 	{
 		if (game->map_len[i - 1] == 'P')
+		{
+			write(1, "lose\n", 5);
 			exit(EXIT_FAILURE);
+		}
 		game->map_len[i] = '0';
 		game->map_len[i - 1] = 'N';
 		setting_enemy(game);
@@ -63,7 +72,10 @@ void	d(t_game *game)
 		&& game->map_len[i + 1] != 'E')
 	{
 		if (game->map_len[i + 1] == 'P')
+		{
+			write(1, "lose\n", 5);
 			exit(EXIT_FAILURE);
+		}
 		game->map_len[i] = '0';
 		game->map_len[i + 1] = 'N';
 		setting_enemy(game);

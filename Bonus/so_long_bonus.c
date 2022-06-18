@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/18 14:15:39 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/18 15:29:04 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,14 @@ int	main(int argc, char *argv[])
 	map_read(argv[argc - 1], &game);
 	game.mlx = mlx_init();
 	game.counter_animation = 0;
+	game.all_coll = 0;
+	game.coll_cnt = 0;
+	game.walk_cnt = 0;
 	game.win = mlx_new_window(game.mlx, game.width * 64,
 			game.height * 64, "My_so_long 1337");
 	xpm_to_img(&game);
-	collect_number(&game);
 	setting_img(game);
+	collect_number(&game);
 	mlx_hook(game.win, X_EVENT_KEY_EXIT, 0, exit_game, &game);
 	mlx_loop_hook(game.mlx, ft_animation, &game);
 	mlx_key_hook(game.win, key_hook, &game);

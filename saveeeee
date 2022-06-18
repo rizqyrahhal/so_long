@@ -1,4 +1,0 @@
-        mlx_clear_window(game->mlx, game->win);
-        mlx_string_put(game->mlx, game->win, 1000, 150, 0x0000FF00, "losssssssssssse");
-        game->touch_enemy = 404;
-        return;

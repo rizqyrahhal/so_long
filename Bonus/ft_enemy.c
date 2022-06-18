@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:35:07 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/18 13:50:02 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/18 15:28:10 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	move_enemy(t_game *game)
 		&& game->map_len[i - game->width] != 'C'
 		&& game->map_len[i - game->width] != 'E')
 		w(game, i);
-	else if (*game->map_len && game->map_len[i - game->width])
+	else if (*game->map_len)
 		s(game);
 	if (*game->map_len)
 		a(game);

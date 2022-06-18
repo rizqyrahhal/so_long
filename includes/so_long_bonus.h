@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/18 14:12:44 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/18 15:03:39 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	map_read(char *filename, t_game *game);
 void	ft_error(char *error);
 void	setting_img(t_game game);
 int		key_hook(int key_code, t_game *game);
+void	collect_number(t_game *game);
 int		git_position(t_game *game, char c);
 void	move_w(t_game *game);
 void	move_a(t_game *game);
