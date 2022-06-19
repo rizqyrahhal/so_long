@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/18 15:29:04 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/19 15:58:46 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,26 @@ void	xpm_to_img(t_game *game)
 			&game->img_width, &game->img_height);
 }
 
+void	ft_check_ext(char *str)
+{
+	int	n;
+
+	n = ft_strlen(str);
+	if (str[n - 4] == '.' && str[n - 3] == 'b'
+		&& str[n - 2] == 'e'
+		&& str[n - 1] == 'r')
+		return ;
+	ft_error("CHECK_EXTENTION\n");
+}
+
 int	main(int argc, char *argv[])
 {
 	t_game	game;
 
 	if (argc != 2)
-		ft_error("Missing map!\n");
+		ft_error("executed as follows: ./so_long_bonus maps/map_bonus/*.ber\n");
+	ft_check_file(argv[1], &game);
+	ft_check_ext(argv[1]);
 	map_read(argv[argc - 1], &game);
 	game.mlx = mlx_init();
 	game.counter_animation = 0;

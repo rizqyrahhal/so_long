@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:52:05 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/17 19:29:26 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:23:02 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,11 @@ void	move_w(t_game *game)
 		game->coll_cnt++;
 	if (game->map_len[i - game->width] == 'E'
 		&& game->all_coll == game->coll_cnt)
+	{
+		game->walk_cnt++;
+		ft_putnbr(game->walk_cnt);
 		exit (EXIT_SUCCESS);
+	}		
 	else if (game->map_len[i - game->width] != '1'
 		&& game->map_len[i - game->width] != 'E')
 	{
@@ -57,7 +61,11 @@ void	move_a(t_game *game)
 	if (game->map_len[i - 1] == 'C')
 		game->coll_cnt++;
 	if (game->map_len[i - 1] == 'E' && game->all_coll == game->coll_cnt)
+	{
+		game->walk_cnt++;
+		ft_putnbr(game->walk_cnt);
 		exit (EXIT_SUCCESS);
+	}	
 	else if (game->map_len[i - 1] != '1' && game->map_len[i - 1] != 'E')
 	{
 		game->map_len[i] = '0';
@@ -79,7 +87,11 @@ void	move_d(t_game *game)
 	if (game->map_len[i + 1] == 'C')
 		game->coll_cnt++;
 	if (game->map_len[i + 1] == 'E' && game->all_coll == game->coll_cnt)
+	{
+		game->walk_cnt++;
+		ft_putnbr(game->walk_cnt);
 		exit (EXIT_SUCCESS);
+	}	
 	else if (game->map_len[i + 1] != '1' && game->map_len[i + 1] != 'E')
 	{
 		game->map_len[i] = '0';
@@ -102,7 +114,11 @@ void	move_s(t_game *game)
 		game->coll_cnt++;
 	if (game->map_len[i + game->width] == 'E'
 		&& game->all_coll == game->coll_cnt)
+	{
+		game->walk_cnt++;
+		ft_putnbr(game->walk_cnt);
 		exit (EXIT_SUCCESS);
+	}	
 	else if (game->map_len[i + game->width] != '1'
 		&& game->map_len[i + game->width] != 'E')
 	{

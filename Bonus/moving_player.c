@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:52:05 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/18 15:08:51 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:27:52 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	move_w(t_game *game)
 	if (game->map_len[game->p - game->width] == 'E'
 		&& game->all_coll == game->coll_cnt)
 	{
+		game->walk_cnt++;
 		write(1, "done\n", 5);
 		exit (EXIT_SUCCESS);
 	}
@@ -59,6 +60,7 @@ void	move_a(t_game *game)
 	if (game->map_len[game->p - 1] == 'E'
 		&& game->all_coll == game->coll_cnt)
 	{
+		game->walk_cnt++;
 		write(1, "done\n", 5);
 		exit (EXIT_SUCCESS);
 	}
@@ -87,6 +89,7 @@ void	move_d(t_game *game)
 	if (game->map_len[game->p + 1] == 'E'
 		&& game->all_coll == game->coll_cnt)
 	{
+		game->walk_cnt++;
 		write(1, "done\n", 5);
 		exit (EXIT_SUCCESS);
 	}
@@ -115,6 +118,7 @@ void	move_s(t_game *game)
 	if (game->map_len[game->p + game->width] == 'E'
 		&& game->all_coll == game->coll_cnt)
 	{
+		game->walk_cnt++;
 		write(1, "done\n", 5);
 		exit (EXIT_SUCCESS);
 	}

@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:08:21 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/18 15:03:39 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/19 15:31:43 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ typedef struct s_game
 // libft
 size_t	ft_strlen(const char *s);
 char	*get_next_line(int fd);
+char	*get_next_line_2(int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s1);
 char	*ft_itoa(int n);
@@ -93,6 +94,7 @@ void	check_first_line(char *line);
 void	check_inside_map(char *line);
 void	check_last_line(t_game *game);
 void	check_map(t_game *game);
+void	ft_check_file(char *str, t_game *game);
 
 // enemy
 void	setting_enemy(t_game *game);

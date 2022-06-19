@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:33:07 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/18 15:27:55 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/19 15:58:57 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	ft_animation(t_game *game)
 			game->img_space, 1 * 64, 0);
 		mlx_string_put(game->mlx, game->win, 85, 20, 0x0000FF00, game->wlk);
 	}
+	free(game->wlk);
 	if (game->counter_animation <= 15 && game->touch_enemy == 0)
 	{
 		mlx_put_image_to_window(game->mlx, game->win, game->img_space, 0, 0);

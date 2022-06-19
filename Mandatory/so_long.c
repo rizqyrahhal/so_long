@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:10:45 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/06/17 19:29:37 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/19 14:44:24 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int	main(int argc, char *argv[])
 	t_game	game;
 
 	if (argc != 2)
-		ft_error("Missing map!\n");
+		ft_error("executed as follows: ./so_long maps/map/*.ber\n");
+	ft_check_file(argv[1], &game);
 	map_read(argv[argc - 1], &game);
 	game.mlx = mlx_init();
 	game.win = mlx_new_window(game.mlx, game.width * 64,
